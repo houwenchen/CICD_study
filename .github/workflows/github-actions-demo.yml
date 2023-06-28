@@ -19,7 +19,6 @@ jobs:
   ubuntu_kubernetes:
     runs-on: ubuntu-latest
     steps:
-      - run: sudo su
       - uses: actions/checkout@v3
       - uses: medyagh/setup-minikube@latest
         with:
@@ -38,4 +37,4 @@ jobs:
           wait: false
           insecure-registry: 'localhost:5000,10.0.0.0/24'
       - run: kubectl get pods -A
-      - run: lvdisplay
+      - run: sudo lvdisplay
