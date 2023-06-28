@@ -20,8 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: chmod 777 ./build/build.sh
-      - run: ./build/build.sh
+      - run: |
+          chmod 777 ./build/lvm_env_pre.sh
+          ./build/lvm_env_pre.sh
+          sudo lvdisplay
+          sudo vgdisplay
+          sudo pvdisplay
     #   - uses: medyagh/setup-minikube@latest
     #     with:
     #       cache: false
@@ -39,6 +43,4 @@ jobs:
     #       wait: false
     #       insecure-registry: 'localhost:5000,10.0.0.0/24'
     #   - run: kubectl get pods -A
-      - run: sudo lvdisplay
-      - run: sudo vgdisplay
-      - run: sudo pvdisplay
+    
