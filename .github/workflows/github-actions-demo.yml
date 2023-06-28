@@ -19,6 +19,7 @@ jobs:
   ubuntu_kubernetes:
     runs-on: ubuntu-latest
     steps:
+      - run: sudo su
       - uses: actions/checkout@v3
       - uses: medyagh/setup-minikube@latest
         with:
