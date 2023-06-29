@@ -32,7 +32,7 @@ jobs:
           # minikube-version: 1.24.0
           # driver: docker
           # container-runtime: containerd
-          kubernetes-version: v1.26.0
+          # kubernetes-version: v1.26.0
           cpus: 2
           # memory: 4000m
           # cni: bridge
